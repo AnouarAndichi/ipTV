@@ -116,7 +116,7 @@ def encrypt(rHost="127.0.0.1", rUsername="user_iptvpro", rPassword="", rDatabase
     data = '{{"host":"{}","db_user":"{}","db_pass":"{}","db_name":"{}","server_id":"{}","db_port":"{}"}}'.format(
         rHost, rUsername, rPassword, rDatabase, rServerID, rPort).encode('utf-8')
     
-    encrypted_data = bytes(chr(data[i] ^ key[i % len(key)]) for i in range(len(data)))
+    encrypted_data = bytes([data[i] ^ key[i % len(key)] for i in range(len(data))])
     encoded_data = base64.b64encode(encrypted_data)
     
     with open('/home/xtreamcodes/iptv_xtream_codes/config', 'wb') as rf:
