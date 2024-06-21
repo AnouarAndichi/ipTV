@@ -167,8 +167,8 @@ def configure():
     if not " xtream-codes.com" in open("/etc/hosts").read(): os.system('echo "127.0.0.1    xtream-codes.com" >> /etc/hosts')
 
 def start(first=True):
-    if first: printc("Starting Xtream Codes")
-    else: printc("Restarting Xtream Codes")
+    if first: print("Starting Xtream Codes")
+    else: print("Restarting Xtream Codes")
     os.system("/home/xtreamcodes/iptv_xtream_codes/start_services.sh > /dev/null")
 
 def modifyNginx():
